@@ -4,6 +4,9 @@
 
 class Backpack:
 
+    # declaring a class attribute which is inititated for all instances of class
+    max_num_of_items = 10
+
     # If the name of a parameter clashes with a keyword, you should add a trailing underscore to the parameter.
     # For example:
     # def __init__(self, description, type_):
