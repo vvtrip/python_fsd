@@ -48,3 +48,16 @@ print()
 print(per_p.show_car_info())
 
 
+# Aggregation is a "has a" relationship.
+
+# An instance of class B has an instance of class A 
+# but they can both exist independently.
+
+# If the program removes the instance of class B, the 
+# instance of class A can still exist on its own.
+
+# Implementation
+
+# To implement this in our code, we usually pass 
+# an instance of a class as an argument to create an 
+# instance of another class.
