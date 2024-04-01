@@ -47,7 +47,7 @@ print(per_p.car.show_info())
 print()
 print(per_p.show_car_info())
 
-
+# Aggregation
 # Aggregation is a "has a" relationship.
 
 # An instance of class B has an instance of class A 
@@ -61,3 +61,40 @@ print(per_p.show_car_info())
 # To implement this in our code, we usually pass 
 # an instance of a class as an argument to create an 
 # instance of another class.
+
+# ---------------------------------------------------------
+
+# Composition
+# In composition, a composed object cannot exist without the 
+# object that contains it.
+
+# For example, let's say that conceptually, an Engine instance 
+# cannot exist without its Car instance in a given program. If 
+# we remove the Car instance from the program, the Engine 
+# instance associated to the car should be removed as well.
+
+# Implementation
+
+# To implement this in our code, this would involve creating the 
+# instance of the composed object inside the object that contains it.
+
+# This way, when the "container" object is removed from the program, 
+# the composed object is removed as well.
+
+# class Die:
+ 
+#     def __init__(self, value):
+#         self.value = value
+ 
+ 
+# class Player:
+ 
+#     def __init__(self):
+#         # Create the instance of Die 
+#         # inside the instance of Player.
+#         # This Die instance cannot exist without 
+#         # the Player instance that contains it. 
+#         self.die = Die(5)
+ 
+        
+# my_player = Player()
