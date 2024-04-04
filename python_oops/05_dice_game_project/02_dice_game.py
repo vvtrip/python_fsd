@@ -58,3 +58,47 @@ player.roll_die() #same value for below 2 prints
 print(my_die.value)
 print(player.die.value)
 
+class DiceGame:
+
+    def __init__(self, player, computer):
+        self._player = player
+        self._computer = computer
+
+    def play(self):
+        print("========================")
+        print("Welcome to DiceGame")
+        print("========================")
+
+        while True:
+            self.play_round()    
+
+    def play_round(self):
+        print("----- Welcome to new round -----")
+        input(' Enter any key')
+        
+        player_val = self._player.roll_die()        
+        computer_val = self._computer.roll_die() 
+
+        if player_val > computer_val:
+            print('You won')
+            self._player.decrement_counter()
+            self._computer.increment_counter()
+        elif computer_val > player_val:
+            print('Computer won. Train agaimn')
+            self._player.increment_counter()
+            self._computer.decrement_counter()
+        else:
+            print("it's a tie")
+
+        print('your score',self._player.counter)
+        print("computer's score", self._computer.counter)    
+
+my_die = Die()
+computer_die = Die()
+
+my_player = Player(my_die, is_computer=False)
+computer_player = Player(computer_die, is_computer=True)
+
+game = DiceGame(my_player, computer_player)
+
+game.play()
