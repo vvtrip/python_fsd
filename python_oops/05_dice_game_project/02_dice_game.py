@@ -68,30 +68,53 @@ class DiceGame:
         print("========================")
         print("Welcome to DiceGame")
         print("========================")
-
+        
+        n=1
         while True:
-            self.play_round()    
+            print(f'\n----- Welcome to Round {n} -----')
+            player_counter, computer_counter = self.play_round()    
+            n+=1
+
+            if player_counter == 0:
+                print("========= YOU WON =========")
+                print('Game over . Thanks for playing')
+                break
+            elif computer_counter == 0:
+                print("========= COMPUTER WON =========")
+                print('Game over . Thanks for playing')
+                break
+            else:
+                pass
 
     def play_round(self):
-        print("----- Welcome to new round -----")
-        input(' Enter any key')
+        input('Press Enter ')
         
-        player_val = self._player.roll_die()        
-        computer_val = self._computer.roll_die() 
+        self._player.roll_die()
+        player_val =  self._player.die.value       
+        self._computer.roll_die() 
+        computer_val = self._computer.die.value
 
         if player_val > computer_val:
+            print('your die- ',player_val)
+            print('computer die- ',computer_val)
             print('You won')
             self._player.decrement_counter()
             self._computer.increment_counter()
         elif computer_val > player_val:
-            print('Computer won. Train agaimn')
+            print('your die- ',player_val)
+            print('computer die- ',computer_val)
+            print('Computer won. Train again')
             self._player.increment_counter()
             self._computer.decrement_counter()
         else:
+            print('your die- ',player_val)
+            print('computer die- ',computer_val)
             print("it's a tie")
 
         print('your score',self._player.counter)
-        print("computer's score", self._computer.counter)    
+        print("computer's score", self._computer.counter)
+
+        return self._player.counter, self._computer.counter    
 
 my_die = Die()
 computer_die = Die()
