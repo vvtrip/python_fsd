@@ -1,6 +1,3 @@
-from player import Player
-from move import Move
-
 class Board:
     
     EMPTY_CELL = 0
@@ -69,4 +66,17 @@ class Board:
         for i in range(3):
             if self.game_board[i][2-i] == player.marker:
                 counter += 1
-        return counter == 3                               
+        return counter == 3
+    
+    def check_is_tie(self):
+
+        counter = 0
+        for row in self.game_board:
+            counter += row.count(Board.EMPTY_CELL)
+    
+        return counter == 0
+    
+    def reset_board(self):
+        self.game_board = [[0, 0, 0],
+                           [0, 0, 0],
+                           [0, 0, 0]]
