@@ -14,3 +14,4 @@ class Square(Polygon):
 
 # we can check if a child class is derived from a parent class by issubclass function
 print(issubclass(Triangle, Polygon))
+
