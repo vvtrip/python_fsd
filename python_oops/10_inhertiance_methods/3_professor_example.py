@@ -109,3 +109,52 @@ class ScienceProfessor4(Professor4):
         
 science_professor = ScienceProfessor4("rahul", 36, "physics")
 science_professor.greet_students()
+
+# The terms overwriting and overriding may sound and look very similar, but they are actually quite different.
+
+# Overwriting means replacing existing code or data with new code or data.
+
+# Overriding involves modifying the behavior of a method within a hierarchy. When a method is overridden, its new implementation takes precedence over previous implementations located higher in the hierarchy.
+
+# 🚩 Knowing this difference is very important for choosing the correct term in the appropriate context.
+
+# Method Overloading
+# Method Overloading occurs when two methods of the same class have the same name but different parameters.
+
+# When the methods are called, the version that is executed is determined by the number of arguments or their data types.
+
+
+
+# ◼️ Python
+# Python does not support method overloading. The closest thing to method overloading that we currently have in Python are default arguments, because you can call a method with a different number of arguments and use their default values. But this is not method overloading per se.
+
+
+
+# ◼️ Java
+# Other programming languages do support method overloading. One example is Java.
+
+# In Java, you have to explicitly declare the data type of each argument, so the compiler can match the number, sequence, and data types of the arguments to the number, sequence, and data types of the formal parameters in each method to determine which one should be called.
+
+# This is an example of method overloading in Java with two add() methods in the Test class:
+
+
+
+# class Test {
+ 
+#    public int add(int a, int b) { 
+#        return a + b;
+#    }
+ 
+#    public int add(int a, int b, int c) {
+#        return a + b + c;
+#    }
+# }
+ 
+# class Main {
+ 
+#    public static void main(String args[]) {
+#        Test obj = new Test();
+#        obj.add(10, 10);  # This will call the first method. Only two arguments
+#        obj.add(20, 12, 5); # This will call the second method. Three arguments.
+#    }
+# }
